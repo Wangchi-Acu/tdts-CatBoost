@@ -22,17 +22,17 @@ col1, col2 = st.columns(2)
 with col1:
     DUR = st.number_input("病程（月）:", min_value=0.0, max_value=500.0, value=1.0)
     LPRDR = st.number_input("记录期间最低脉率（次/分钟）:", min_value=0.0, max_value=200.0, value=1.0)
-    N1P = st.number_input("N1期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
+    DOM = st.number_input("微觉醒持续时间（分钟）:", min_value=0.0, max_value=100.0, value=1.0)
+    MAPTS = st.number_input("微觉醒占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
     SS20 = st.selectbox("是否口臭:", options=["否", "是"], index=0)
-    N1LOL = st.number_input("自关灯起的N1期潜伏期（分钟）:", min_value=0.0, max_value=500.0, value=1.0)
     
 with col2:
+    N1LOL = st.number_input("自关灯起的N1期潜伏期（分钟）:", min_value=0.0, max_value=500.0, value=1.0)
+    N1P = st.number_input("N1期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
     N3P = st.number_input("N3期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
-    DOM = st.number_input("微觉醒持续时间（分钟）:", min_value=0.0, max_value=100.0, value=1.0)
-    SS31 = st.selectbox("是否乳房胀痛:", options=["否", "是"], index=0)
-    MAPTS = st.number_input("微觉醒占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
     RP = st.number_input("REM期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
-
+    SS31 = st.selectbox("是否乳房胀痛:", options=["否", "是"], index=0)
+    
 DI17 = st.selectbox("是否患有胃炎:", options=["否", "是"], index=0)
 
 # 进行预测
