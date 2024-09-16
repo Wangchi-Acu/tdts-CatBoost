@@ -38,6 +38,7 @@ DI17 = st.selectbox("是否患有胃炎:", options=["否", "是"], index=0)
 # 进行预测
 if st.button("预测"):
     feature_values = [DUR, LPRDR, N1P, 1 if SS20 == "是" else 0, N1LOL, N3P, DOM, 1 if SS31 == "是" else 0, MAPTS, RP, 1 if DI17 == "是" else 0]
+    feature_names = ["DUR", "LPRDR", "N1P", "SS20", "N1LOL", "N3P", "DOM", "SS31", "MAPTS", "RP", "DI17"]
     prediction_proba = CAT_model.predict_proba([feature_values])[0, 1]
     st.write(f"该患者经“通督调神”针法治疗后PSQI减分率≥50%的概率: {prediction_proba:.2%}")
     
