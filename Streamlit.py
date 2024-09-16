@@ -14,18 +14,10 @@ explainer = shap.TreeExplainer(CAT_model)
 
 # Streamlit 用户界面
 # 添加团队logo
-#st.image("jsszyylogo.png", width=500)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
+st.image("jsszyylogo.png", width=500)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
 
 # 使用Markdown来定制标题的字体大小
-#st.markdown('<h1 style="font-size:42px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
-
-# HTML模板，用于显示Logo和标题
-logo_and_title_html = """
-<div style="display: flex; align-items: center; gap: 10px;">
-    <img src="jsszyylogo.png" style="width: 100px; height: auto; display: block;">
-    <h1 style="font-size: 42px; margin: 0;">“通督调神”针法治疗失眠症疗效预测</h1>
-</div>
-"""
+st.markdown('<h1 style="font-size:42px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
 
 # 使用Markdown显示带有HTML和CSS的Logo和标题
 st.markdown(logo_and_title_html, unsafe_allow_html=True)
