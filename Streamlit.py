@@ -14,11 +14,19 @@ explainer = shap.TreeExplainer(CAT_model)
 
 # Streamlit 用户界面
 # 添加团队logo
-st.image("jsszyylogo.png", width=100)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
+#st.image("jsszyylogo.png", width=50)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
 
 # 使用Markdown来定制标题的字体大小
-st.markdown('<h1 style="font-size:32px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
-
+#st.markdown('<h1 style="font-size:36px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
+# 添加团队logo和标题
+st.markdown(
+    '''
+    <div style="display: flex; align-items: center;">
+        <img src="jsszyylogo.png" style="width: 50px; height: 50px; margin-right: 10px;">
+        <h1 style="margin: 0;">“通督调神”针法治疗失眠症疗效预测</h1>
+    </div>
+    ''', unsafe_allow_html=True
+)
 best_threshold = 0.72  # 这是你确定的最佳阈值
 
 # 创建列布局
