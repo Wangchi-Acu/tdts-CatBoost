@@ -13,7 +13,11 @@ CAT_model = joblib.load('Catboost.pkl')
 explainer = shap.TreeExplainer(CAT_model)
 
 # Streamlit 用户界面
-st.title("“通督调神”针法治疗失眠症疗效预测")
+# 添加团队logo
+st.image("jsszyylogo.png", width=100)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
+
+# 使用Markdown来定制标题的字体大小
+st.markdown('<h1 style="font-size:32px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
 
 best_threshold = 0.72  # 这是你确定的最佳阈值
 
