@@ -19,9 +19,6 @@ st.image("jsszyylogo.png", width=500)  # 更改url_to_your_logo.png为你的logo
 # 使用Markdown来定制标题的字体大小
 st.markdown('<h1 style="font-size:42px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
 
-# 使用Markdown显示带有HTML和CSS的Logo和标题
-st.markdown(logo_and_title_html, unsafe_allow_html=True)
-
 best_threshold = 0.72  # 这是你确定的最佳阈值
 
 # 创建列布局
