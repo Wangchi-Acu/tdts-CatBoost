@@ -30,7 +30,7 @@ N3P = st.number_input("N3期占总睡眠时长比例（%）:", min_value=0.0, ma
 DOM = st.number_input("微觉醒持续时间（分钟）:", min_value=0.0, max_value=100.0, value=1.0)
 SS31 = st.selectbox("是否乳房胀痛:", options=["否", "是"], index=0)
 MAPTS = st.number_input("微觉醒占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
-RP = st.number_input(":", min_value=0.0, max_value=100.0, value=1.0)
+RP = st.number_input("REM期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
 DI17 = st.selectbox("是否患有胃炎:", options=["否", "是"], index=0)
 
 # 进行预测
@@ -45,9 +45,9 @@ if st.button("预测"):
 
     # 根据阈值判断结果
     if prediction_proba >= best_threshold:
-        st.write("该患者可能经“通督调神”针法治疗后PSQI减分率≥50%")
+        st.write("该患者可能经“通督调神”针法治疗后显效")
     else:
-        st.write("该患者可能经“通督调神”针法治疗后PSQI减分率<50%")
+        st.write("该患者可能经“通督调神”针法治疗后不显效")
 
     # 计算 SHAP 值
     shap_values = explainer.shap_values([feature_values])
