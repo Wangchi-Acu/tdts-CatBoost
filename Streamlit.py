@@ -22,8 +22,8 @@ explainer = shap.TreeExplainer(CAT_model)
 st.markdown(
     '''
     <div style="display: flex; align-items: center;">
-        <img src="jsszyylogo.png" style="width: 50px; height: 50px; margin-right: 10px;">
-        <h1 style="margin: 0;">“通督调神”针法治疗失眠症疗效预测</h1>
+        <img src="jsszyylogo.png" style="width: 50px; ">
+        <h1 style="margin: 0; font-size: 32px;">“通督调神”针法治疗失眠症疗效预测</h1>
     </div>
     ''', unsafe_allow_html=True
 )
