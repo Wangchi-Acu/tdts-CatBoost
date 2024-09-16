@@ -17,7 +17,7 @@ explainer = shap.TreeExplainer(CAT_model)
 st.image("jsszyylogo.png", width=500)  # 更改url_to_your_logo.png为你的logo图片链接，调整width为适当的大小
 
 # 使用Markdown来定制标题的字体大小
-st.markdown('<h1 style="font-size:48px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="font-size:42px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
 # 添加团队logo和标题
 best_threshold = 0.72  # 这是你确定的最佳阈值
 
