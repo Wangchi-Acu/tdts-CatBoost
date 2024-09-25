@@ -19,30 +19,29 @@ st.image("jsszyylogo.png", width=500)  # 更改url_to_your_logo.png为你的logo
 # 使用Markdown来定制标题的字体大小
 st.markdown('<h1 style="font-size:42px;">“通督调神”针法治疗失眠症疗效预测</h1>', unsafe_allow_html=True)
 
-best_threshold = 0.72  # 这是你确定的最佳阈值
+best_threshold = 0.70  # 这是你确定的最佳阈值
 
 # 创建列布局
 col1, col2 = st.columns(2)
 with col1:
     DUR = st.number_input("病程（月）:", min_value=0.0, max_value=500.0, value=1.0)
     LPRDR = st.number_input("记录期间最低脉率（次/分钟）:", min_value=0.0, max_value=200.0, value=1.0)
-    DOM = st.number_input("微觉醒持续时间（分钟）:", min_value=0.0, max_value=100.0, value=1.0)
-    MAPTS = st.number_input("微觉醒占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
+    DI17 = st.selectbox("是否患有胃炎:", options=["否", "是"], index=0)
     SS20 = st.selectbox("是否口臭:", options=["否", "是"], index=0)
+    SS31 = st.selectbox("是否乳房胀痛:", options=["否", "是"], index=0)
     
 with col2:
+    DOM = st.number_input("微觉醒时长（分钟）:", min_value=0.0, max_value=500.0, value=1.0)
     N1LOL = st.number_input("自关灯起的N1期潜伏期（分钟）:", min_value=0.0, max_value=500.0, value=1.0)
     N1P = st.number_input("N1期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
     N3P = st.number_input("N3期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
     RP = st.number_input("REM期占总睡眠时长比例（%）:", min_value=0.0, max_value=100.0, value=1.0)
-    SS31 = st.selectbox("是否乳房胀痛:", options=["否", "是"], index=0)
     
-DI17 = st.selectbox("是否患有胃炎:", options=["否", "是"], index=0)
 
 # 进行预测
 if st.button("预测"):
-    feature_values = [DUR, LPRDR, N1P, 1 if SS20 == "是" else 0, N1LOL, N3P, DOM, 1 if SS31 == "是" else 0, MAPTS, RP, 1 if DI17 == "是" else 0]
-    feature_names = ["DUR", "LPRDR", "N1P", "SS20", "N1LOL", "N3P", "DOM", "SS31", "MAPTS", "RP", "DI17"]
+    feature_values = [DUR, LPRDR, N1P, 1 if SS20 == "是" else 0, N1LOL, N3P, DOM, 1 if SS31 == "是" else 0,  RP, 1 if DI17 == "是" else 0]
+    feature_names = ["DUR", "LPRDR", "N1P", "SS20", "N1LOL", "N3P", "DOM", "SS31",  "RP", "DI17"]
     prediction_proba = CAT_model.predict_proba([feature_values])[0, 1]
     st.write(f"该患者经“通督调神”针法治疗后PSQI减分率≥50%的概率: {prediction_proba:.2%}")
     
